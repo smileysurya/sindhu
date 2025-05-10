@@ -1,0 +1,22 @@
+<!-- violations/templates/violations/report_detail.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report #{{ report.id }}</title>
+</head>
+<body>
+    <h1>Violation Report #{{ report.id }}</h1>
+    <p>Generated at: {{ report.created_at }}</p>
+    <a href="{{ report.pdf_report.url }}" download>Download Full Report</a>
+    
+    <h2>Detected Violations</h2>
+    <ul>
+    {% for violation in violations %}
+        <li>
+            {{ violation.get_type_display }} 
+            <img src="{{ violation.image.url }}" width="200">
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

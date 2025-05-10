@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Report Generated</title>
+</head>
+<body>
+    <h1>Violation Report Generated</h1>
+    <a href="{{ report_url }}" download="traffic_violation_report.pdf">Download PDF Report</a>
+    <p>Report ID: {{ report_id }}</p>
+    <!-- Example PDF download link -->
+<a href="/media/reports/report_1.pdf" download>
+Download Report
+</a>
+
+<!-- Example violation image -->
+<img src="/media/violations/violation_1.jpg">
+    
+    <!-- Add this for debugging -->
+    <div style="margin-top: 20px; padding: 10px; background: #f5f5f5;">
+        <h3>Debug Info:</h3>
+        <p>Full path: {{ MEDIA_URL }}{{ report_url }}</p>
+        <p>File exists: 
+            {% if file_exists %}✅ Yes{% else %}❌ No{% endif %}
+        </p>
+    </div>
+</body>
+</html>
